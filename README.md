@@ -1,6 +1,10 @@
 # APIsParser
 APIsParser allows you to generate a json representation of your api resources and visualise them using a customised version of [WebVOWL](https://github.com/VisualDataWeb/WebVOWL).
 
+
+![2015-09-20 17 02 28](https://user-images.githubusercontent.com/5663078/99097077-065abd00-25cf-11eb-9dd3-a9c8bb9ad303.png)
+
+
 ----------------------------------
 
 - [Setup](#setup)
@@ -219,4 +223,10 @@ APIsParser generates a json representation only of resources that have these two
 
 ### New Features to implement
 - Run APIsParser inside an evergreen task to generate APIs.json
-- Add more filter to Private api, Agent API 
+- Add more filter to Private api, Agent API
+
+
+
+## License
+
+APIsParser is released under the Apache 2.0 license.
