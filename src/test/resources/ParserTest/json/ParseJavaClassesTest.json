@@ -1,0 +1,536 @@
+[
+  {
+    "name": "performanceAdvisor",
+    "javaClass": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+    "baseURL": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor",
+    "dependencies": [
+      "api.open.svc.atm.svc.AutomationAgentAuditSvc",
+      "api.open.svc.nds.svc.NDSLookupSvc",
+      "api.open.svc.source.svc.SlowQueryLogSvc",
+      "api.open.svc.source.svc.explorer.DataExplorerSvc",
+      "api.open.svc.source.svc.host.HostSvc",
+      "api.open.svc.source.svc.performanceadvisor.PerformanceAdvisorSvc"
+    ],
+    "endpoints": [
+      {
+        "httpMethod": "GET",
+        "path": "/namespaces",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_READ_ONLY"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pOrganization",
+            "type": "Organization",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pCurrentUser",
+            "type": "AppUser",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroupId",
+            "type": "ObjectId",
+            "annotations": [
+              "PathParam(\"groupId\")"
+            ]
+          },
+          {
+            "name": "pProcessId",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"processId\")"
+            ]
+          },
+          {
+            "name": "pSince",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"since\")"
+            ]
+          },
+          {
+            "name": "pDuration",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"duration\")"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")",
+              "DefaultValue(\"false\")"
+            ]
+          },
+          {
+            "name": "pImprovementMinimum",
+            "type": "int",
+            "annotations": [
+              "QueryParam(\"improvementMin\")",
+              "DefaultValue(\"\" + PerformanceAdvisorSvc.IMPROVEMENT_MINIMUM)"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/suggestedIndexes",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_READ_ONLY"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pOrganization",
+            "type": "Organization",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pCurrentUser",
+            "type": "AppUser",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroupId",
+            "type": "ObjectId",
+            "annotations": [
+              "PathParam(\"groupId\")"
+            ]
+          },
+          {
+            "name": "pProcessId",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"processId\")"
+            ]
+          },
+          {
+            "name": "pNamespaces",
+            "type": "List<String>",
+            "annotations": [
+              "QueryParam(\"namespaces\")"
+            ]
+          },
+          {
+            "name": "pSince",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"since\")"
+            ]
+          },
+          {
+            "name": "pDuration",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"duration\")"
+            ]
+          },
+          {
+            "name": "pNIndexes",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"nIndexes\")"
+            ]
+          },
+          {
+            "name": "pNExamples",
+            "type": "int",
+            "annotations": [
+              "QueryParam(\"nExamples\")",
+              "DefaultValue(\"5\")"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")",
+              "DefaultValue(\"false\")"
+            ]
+          },
+          {
+            "name": "pImprovementMinimum",
+            "type": "int",
+            "annotations": [
+              "QueryParam(\"improvementMin\")",
+              "DefaultValue(\"\" + PerformanceAdvisorSvc.IMPROVEMENT_MINIMUM)"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/slowQueryLogs",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_DATA_ACCESS_ANY"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pOrganization",
+            "type": "Organization",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pCurrentUser",
+            "type": "AppUser",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroupId",
+            "type": "ObjectId",
+            "annotations": [
+              "PathParam(\"groupId\")"
+            ]
+          },
+          {
+            "name": "pProcessId",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"processId\")"
+            ]
+          },
+          {
+            "name": "pNamespaces",
+            "type": "List<String>",
+            "annotations": [
+              "QueryParam(\"namespaces\")"
+            ]
+          },
+          {
+            "name": "pSince",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"since\")"
+            ]
+          },
+          {
+            "name": "pDuration",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"duration\")"
+            ]
+          },
+          {
+            "name": "pNLogs",
+            "type": "Long",
+            "annotations": [
+              "QueryParam(\"nLogs\")",
+              "DefaultValue(\"20000\")"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")",
+              "DefaultValue(\"false\")"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "auditLog",
+    "javaClass": "api.source.svc.api.api.res.api.ApiLogResource",
+    "baseURL": "/api/api/v1.0/groups/{resource}/auditLog",
+    "dependencies": [
+      "api.source.svc.nds.svc.NDSUISvc"
+    ],
+    "endpoints": [
+      {
+        "httpMethod": "GET",
+        "path": "",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_ATLAS_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "PATCH",
+        "path": "",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_ATLAS_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pUser",
+            "type": "AppUser",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pAuditInfo",
+            "type": "AuditInfo",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          },
+          {
+            "name": "pAuditLogView",
+            "type": "ApiAtlasAuditLogView",
+            "annotations": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "accessList",
+    "javaClass": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+    "baseURL": "/api/api/v1.0/groups/{groupId}/accessList",
+    "dependencies": [
+      "api.source.svc.nds.svc.NDSGroupSvc",
+      "api.source.svc.nds.svc.NDSUISvc"
+    ],
+    "endpoints": [
+      {
+        "httpMethod": "GET",
+        "path": "",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_READ_ONLY",
+          "GROUP_CHARTS_ADMIN",
+          "GLOBAL_STITCH_INTERNAL_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/{entryValue}",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_READ_ONLY",
+          "GLOBAL_STITCH_INTERNAL_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pNetworkPermissionEntryValue",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"entryValue\")"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "POST",
+        "path": "",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_ATLAS_ADMIN",
+          "GROUP_CHARTS_ADMIN",
+          "GLOBAL_STITCH_INTERNAL_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pAuditInfo",
+            "type": "AuditInfo",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          },
+          {
+            "name": "pWhitelist",
+            "type": "List<ApiAtlasNetworkPermissionEntryView>",
+            "annotations": []
+          }
+        ]
+      },
+      {
+        "httpMethod": "DELETE",
+        "path": "/{entryValue}",
+        "type": "PUBLIC_API",
+        "rolesAllowed": [
+          "GROUP_ATLAS_ADMIN",
+          "GLOBAL_STITCH_INTERNAL_ADMIN"
+        ],
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pAuditInfo",
+            "type": "AuditInfo",
+            "annotations": [
+              "Context"
+            ]
+          },
+          {
+            "name": "pNetworkPermissionEntryValue",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"entryValue\")"
+            ]
+          },
+          {
+            "name": "pEnvelope",
+            "type": "Boolean",
+            "annotations": [
+              "QueryParam(\"envelope\")"
+            ]
+          },
+          {
+            "name": "pGroup",
+            "type": "Group",
+            "annotations": [
+              "Context"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "name": "search",
+    "javaClass": "open.source.api.test.res.BillingSearchResource",
+    "baseURL": "/a/b/search",
+    "dependencies": [
+      "open.source.svc.api.svc.billing.InvoiceSvc"
+    ],
+    "endpoints": [
+      {
+        "httpMethod": "GET",
+        "path": "",
+        "type": "WEB_API",
+        "inputParameters": [
+          {
+            "name": "pRequest",
+            "type": "HttpServletRequest",
+            "annotations": [
+              "Context"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/invoices/{invoiceId}",
+        "type": "WEB_API",
+        "inputParameters": [
+          {
+            "name": "pInvoiceId",
+            "type": "ObjectId",
+            "annotations": [
+              "PathParam(\"invoiceId\")"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/payments/{paymentId}",
+        "type": "WEB_API",
+        "inputParameters": [
+          {
+            "name": "pPaymentId",
+            "type": "ObjectId",
+            "annotations": [
+              "PathParam(\"paymentId\")"
+            ]
+          }
+        ]
+      },
+      {
+        "httpMethod": "GET",
+        "path": "/charges/{chargeIdOrPaymentIntentId}",
+        "type": "WEB_API",
+        "inputParameters": [
+          {
+            "name": "pChargeIdOrPaymentIntentId",
+            "type": "String",
+            "annotations": [
+              "PathParam(\"chargeIdOrPaymentIntentId\")"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,376 @@
+{
+  "class": [
+    {
+      "id": "open.source.api.test.res.BillingSearchResource",
+      "type": "owl:Class",
+      "label": "search",
+      "comment": "com.xgen.svc.mms.res.BillingSearchResource",
+      "description": "/a/b/search"
+    },
+    {
+      "id": "/a/b/searchGET",
+      "type": "owl:Thing",
+      "label": "GET "
+    },
+    {
+      "id": "/a/b/searchGET/invoices/{invoiceId}",
+      "type": "owl:Thing",
+      "label": "GET /invoices/{invoiceId}"
+    },
+    {
+      "id": "/a/b/searchGET/payments/{paymentId}",
+      "type": "owl:Thing",
+      "label": "GET /payments/{paymentId}"
+    },
+    {
+      "id": "/a/b/searchGET/charges/{chargeIdOrPaymentIntentId}",
+      "type": "owl:Thing",
+      "label": "GET /charges/{chargeIdOrPaymentIntentId}"
+    },
+    {
+      "id": "open.source.svc.api.svc.billing.InvoiceSvc",
+      "type": "owl:equivalentClass",
+      "label": "com.xgen.svc.mms.svc.billing.InvoiceSvc"
+    },
+    {
+      "id": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "type": "owl:Class",
+      "label": "performanceAdvisor",
+      "comment": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "description": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/namespaces",
+      "type": "owl:Thing",
+      "label": "GET /namespaces"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/suggestedIndexes",
+      "type": "owl:Thing",
+      "label": "GET /suggestedIndexes"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/slowQueryLogs",
+      "type": "owl:Thing",
+      "label": "GET /slowQueryLogs"
+    },
+    {
+      "id": "api.open.svc.atm.svc.AutomationAgentAuditSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.atm.svc.AutomationAgentAuditSvc"
+    },
+    {
+      "id": "api.open.svc.nds.svc.NDSLookupSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.nds.svc.NDSLookupSvc"
+    },
+    {
+      "id": "api.open.svc.source.svc.SlowQueryLogSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.source.svc.SlowQueryLogSvc"
+    },
+    {
+      "id": "api.open.svc.source.svc.explorer.DataExplorerSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.source.svc.explorer.DataExplorerSvc"
+    },
+    {
+      "id": "api.open.svc.source.svc.host.HostSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.source.svc.host.HostSvc"
+    },
+    {
+      "id": "api.open.svc.source.svc.performanceadvisor.PerformanceAdvisorSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.open.svc.source.svc.performanceadvisor.PerformanceAdvisorSvc"
+    },
+    {
+      "id": "api.source.svc.api.api.res.api.ApiLogResource",
+      "type": "owl:Class",
+      "label": "auditLog",
+      "comment": "api.source.svc.api.api.res.api.ApiLogResource",
+      "description": "/api/api/v1.0/groups/{resource}/auditLog"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{resource}/auditLogGET",
+      "type": "owl:Thing",
+      "label": "GET "
+    },
+    {
+      "id": "/api/api/v1.0/groups/{resource}/auditLogPATCH",
+      "type": "owl:Thing",
+      "label": "PATCH "
+    },
+    {
+      "id": "api.source.svc.nds.svc.NDSUISvc",
+      "type": "owl:equivalentClass",
+      "label": "api.source.svc.nds.svc.NDSUISvc"
+    },
+    {
+      "id": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "type": "owl:Class",
+      "label": "accessList",
+      "comment": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "description": "/api/atlas/v1.0/groups/{groupId}/accessList"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET",
+      "type": "owl:Thing",
+      "label": "GET "
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET/{entryValue}",
+      "type": "owl:Thing",
+      "label": "GET /{entryValue}"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListPOST",
+      "type": "owl:Thing",
+      "label": "POST "
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListDELETE/{entryValue}",
+      "type": "owl:Thing",
+      "label": "DELETE /{entryValue}"
+    },
+    {
+      "id": "api.source.svc.nds.svc.NDSGroupSvc",
+      "type": "owl:equivalentClass",
+      "label": "api.source.svc.nds.svc.NDSGroupSvc"
+    }
+  ],
+  "property": [
+    {
+      "id": "/admin/billing/search_dep_-455412437"
+    },
+    {
+      "id": "/admin/billing/searchGET0"
+    },
+    {
+      "id": "/admin/billing/searchGET/invoices/{invoiceId}1"
+    },
+    {
+      "id": "/admin/billing/searchGET/payments/{paymentId}2"
+    },
+    {
+      "id": "/admin/billing/searchGET/charges/{chargeIdOrPaymentIntentId}3"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_381163485"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_779526434"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_579169374"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_-787714160"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_2118736447"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_1899896901"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/namespaces0"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/suggestedIndexes1"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/slowQueryLogs2"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLog_dep_94386777"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLogGET0"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLogPATCH1"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessList_dep_1288937980"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessList_dep_376012268"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET0"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET/{entryValue}1"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListPOST2"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListDELETE/{entryValue}3"
+    }
+  ],
+  "propertyAttribute": [
+    {
+      "id": "/admin/billing/search_dep_-455412437",
+      "type": "rdf:Property",
+      "domain": "com.xgen.svc.mms.res.BillingSearchResource",
+      "range": "com.xgen.svc.mms.svc.billing.InvoiceSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/admin/billing/searchGET0",
+      "type": "owl:ObjectProperty",
+      "domain": "/admin/billing/searchGET",
+      "range": "com.xgen.svc.mms.res.BillingSearchResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/admin/billing/searchGET/invoices/{invoiceId}1",
+      "type": "owl:ObjectProperty",
+      "domain": "/admin/billing/searchGET/invoices/{invoiceId}",
+      "range": "com.xgen.svc.mms.res.BillingSearchResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/admin/billing/searchGET/payments/{paymentId}2",
+      "type": "owl:ObjectProperty",
+      "domain": "/admin/billing/searchGET/payments/{paymentId}",
+      "range": "com.xgen.svc.mms.res.BillingSearchResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/admin/billing/searchGET/charges/{chargeIdOrPaymentIntentId}3",
+      "type": "owl:ObjectProperty",
+      "domain": "/admin/billing/searchGET/charges/{chargeIdOrPaymentIntentId}",
+      "range": "com.xgen.svc.mms.res.BillingSearchResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_381163485",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.atm.svc.AutomationAgentAuditSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_779526434",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.source.svc.SlowQueryLogSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_579169374",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.source.svc.explorer.DataExplorerSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_-787714160",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.source.svc.host.HostSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_2118736447",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.source.svc.performanceadvisor.PerformanceAdvisorSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisor_dep_1899896901",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.open.svc.nds.svc.NDSLookupSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/namespaces0",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/namespaces",
+      "range": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/suggestedIndexes1",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/suggestedIndexes",
+      "range": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/slowQueryLogs2",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/processes/{processId}/performanceAdvisorGET/slowQueryLogs",
+      "range": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLog_dep_94386777",
+      "type": "rdf:Property",
+      "domain": "api.open.svc.source.api.res.api.ApiPerformanceAdvisorResource",
+      "range": "api.source.svc.nds.svc.NDSUISvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLogGET0",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/auditLogGET",
+      "range": "com.xgen.svc.mms.api.res.api.ApiAtlasAuditLogResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/auditLogPATCH1",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/auditLogPATCH",
+      "range": "com.xgen.svc.mms.api.res.api.ApiAtlasAuditLogResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessList_dep_1288937980",
+      "type": "rdf:Property",
+      "domain": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "range": "api.source.svc.nds.svc.NDSGroupSvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessList_dep_376012268",
+      "type": "rdf:Property",
+      "domain": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "range": "api.source.svc.nds.svc.NDSUISvc",
+      "label": "depends on"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET0",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/accessListGET",
+      "range": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListGET/{entryValue}1",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/accessListGET/{entryValue}",
+      "range": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListPOST2",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/accessListPOST",
+      "range": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "label": "belongs to"
+    },
+    {
+      "id": "/api/api/v1.0/groups/{groupId}/accessListDELETE/{entryValue}3",
+      "type": "owl:ObjectProperty",
+      "domain": "/api/api/v1.0/groups/{groupId}/accessListDELETE/{entryValue}",
+      "range": "api.source.svc.open.api.res.api.ApiNetworkAccessListResource",
+      "label": "belongs to"
+    }
+  ]
+}

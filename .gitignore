@@ -1,0 +1,23 @@
+*.class
+**/build
+**/.gradle
+
+
+# Eclipse files
+.project
+.classpath
+
+# Node.js dependencies
+node_modules
+
+# IntelliJ  files
+*.iml
+.idea/
+
+# NetBeans files
+**/nbproject/**
+
+# Build files
+**/deploy
+!deploy/.htaccess
+webvowl*.zip
