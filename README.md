@@ -1,5 +1,5 @@
 # APIsParser
-APIsParser allows you to generate a json representation of your api resources and visualise them using a customised version of [WebVOWL](https://github.com/VisualDataWeb/WebVOWL).
+APIsParser allows you to generate a json representation of your Java API resources and visualise them using a customised version of [WebVOWL](https://github.com/VisualDataWeb/WebVOWL).
 
 
 ![2015-09-20 17 02 28](https://user-images.githubusercontent.com/5663078/99097077-065abd00-25cf-11eb-9dd3-a9c8bb9ad303.png)
