@@ -58,11 +58,11 @@ java -jar build/libs/APIsParser-1.0.0.jar --path /Users/andrea.angiolillo/worksp
 
 ### Output 
 APIsParser generates two json files:
-- APIs: json representation of api resources
-- WebVOWL: json file used by WebVOWL to generate the network chart
+- **APIs.json**: json representation of api resources
+- **WebVOWL.json**: json file used by WebVOWL to generate the network chart
 
 
-#### Json Representation Fields
+#### APIs.json Fields
 
 - ```name```: [String] 
   - The name of the resource
