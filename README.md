@@ -61,20 +61,54 @@ APIsParser generates two json files:
 - APIs: json representation of api resources
 - WebVOWL: json file used by WebVOWL to generate the network chart
 
-#### APIs fields
 
-- ```name```: [String] - the name of the resource. This field is extract from ```@Path``` annotation of the java class
-- ```javaClass```: [String] - the name of the java class. Example: ```com.xsrc.svc.res.EmailResource```
-- ```baseURL```: [String] - the base URL of the resource. This field is the value of ```@Path``` annotation of the java class
-- ```dependencies```: [String[]] - Array of dependencies
-- ```endpoints```: [Endpoint[]] - Array of endpoints
-- ```endpoint.httpMethod```: [String] - HTTP Verb of the endpoint. This field is extracted from ```@GET|@PUT|@DELETE|@POST|@PATCH``` annotation of the endpoint
-- ```endpoint.path```: [String] - Path to use the endpoint. This field is extracted from ```@Path``` annotation of the endpoint
-- ```endpoint.type``` : [String] - type of the endpoint. Valid Values: {PUBLIC_API, WEB_API}. This field is set by using ```@UiCall``` annotation
-- ```endpoint.inputParameters```:[Parameter[]] - Array of input parameters of the endpoint
-- ```endpoint.parameter.name```: [String] - name of the paramenter. Example: ```pRequest```
-- ```endpoint.paramenter.type```: [String] - type of the paramenter. Example: ```HttpServletRequest```
-- ```endpoint.paramenter.annotations```: [String[]] - Array of annotations related to the parameter. Example: ```"annotations": ["Context"]```
+#### Json Representation Fields
+
+- ```name```: [String] 
+  - The name of the resource
+  - This field is extract from ```@Path``` annotation of the java class
+  - Example: ```"name": "groups"```
+- ```javaClass```: [String] 
+  - The name of the java class
+  - Example: ```"javaClass": "/api/public/v1.0/usage/groups"```
+- ```baseURL```: [String] 
+  - The base URL of the resource
+  - This field is the value of ```@Path``` annotation of the java class
+  - Example: ```"baseURL": "com.xsrc.svc.res.EmailResource"```
+- ```dependencies```: Array[String] 
+  - Array of dependencies
+  - A dependency is a service that the resource use for its endpoints
+  - APIsParser looks for variable definitions and parameters in the Constructor to find dependencies -> [ClassVisitor.java](https://github.com/andreaangiolillo/APIsParser/blob/46f80bd324e8c938c5a041f362fb24473bab1a2d/src/main/java/Parser/Visitor/ClassVisitor.java#L70)
+  - Example: ```"dependencies": [ "com.xgen.svc.mms.svc.agent.AgentLogSvc", "com.xgen.module.dbusage.svc.DbUsageTypeMappingSvc"]```
+- ```endpoints```: Array[Endpoint] - Array of endpoints
+  - ```endpoint.httpMethod```: [String] 
+    - HTTP Verb of the endpoint
+    - This field is extracted from ```@GET|@PUT|@DELETE|@POST|@PATCH``` annotation of the endpoint
+    - Example: ```"httpMethod": "GET"```
+  - ```endpoint.path```: [String] 
+    - Path to use the endpoint
+    - This field is extracted from ```@Path``` annotation of the endpoint
+    - Example: ```"path": "/{groupId}/markAsBackingDatabase"```
+  - ```endpoint.type``` : [String] 
+    - type of the endpoint
+    - Valid Values: {PROGRAMMATIC, UI}
+    - This field is set by using ```@UiCall``` annotation
+    - Example: ```"type": "PUBLIC_API"```
+  - ```endpoint.rolesAllowed```:Array[String]
+    - Roles allowed to call the endpoint
+    - This field is set by using @RolesAllowed annotation
+    - This field may not be present if the endpoint doesn’t have the @RolesAllowed annotation
+    - Example: ```"roleAllowerd": ["oleSet.NAME.ORG_MEMBER"]```
+  - ```endpoint.inputParameters```:Array[Parameter] - Array of input parameters of the endpoint
+    - ```endpoint.parameter.name```: [String]
+      - name of the paramenter
+      - Example: ```"name": "pRequest"```
+    - ```endpoint.paramenter.type```: [String] 
+      - type of the paramenter 
+      - Example: ```"type": HttpServletRequest```
+    - ```endpoint.paramenter.annotations```: Array[String] 
+      - Array of annotations related to the parameter
+      - Example: ```"annotations": ["Context"]```
 
 ##### Example
 ###### Java class:
