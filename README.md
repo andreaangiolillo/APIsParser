@@ -62,7 +62,7 @@ APIsParser generates two json files:
 - **WebVOWL.json**: json file used by WebVOWL to generate the network chart
 
 
-#### APIs.json Fields
+#### APIs Fields
 
 - ```name```: [String] 
   - The name of the resource
@@ -78,7 +78,7 @@ APIsParser generates two json files:
 - ```dependencies```: Array[String] 
   - Array of dependencies
   - A dependency is a service that the resource use for its endpoints
-  - APIsParser looks for variable definitions and parameters in the Constructor to find dependencies -> [ClassVisitor.java](https://github.com/andreaangiolillo/APIsParser/blob/46f80bd324e8c938c5a041f362fb24473bab1a2d/src/main/java/Parser/Visitor/ClassVisitor.java#L70)
+  - APIsParser looks for variable definitions and parameters in the Constructor to find dependencies -> [ClassVisitor.java](https://github.com/10gen/APIsParser/blob/18b70dd67747dc941f93ba8107f72e16dfbbab1f/src/main/java/Parser/Visitor/ClassVisitor.java#L70)
   - Example: ```"dependencies": [ "com.xgen.svc.mms.svc.agent.AgentLogSvc", "com.xgen.module.dbusage.svc.DbUsageTypeMappingSvc"]```
 - ```endpoints```: Array[Endpoint] - Array of endpoints
   - ```endpoint.httpMethod```: [String] 
