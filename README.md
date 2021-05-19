@@ -79,7 +79,7 @@ APIsParser generates two json files:
   - Array of dependencies
   - A dependency is a service that the resource use for its endpoints
   - APIsParser looks for variable definitions and parameters in the Constructor to find dependencies -> [ClassVisitor.java](https://github.com/10gen/APIsParser/blob/18b70dd67747dc941f93ba8107f72e16dfbbab1f/src/main/java/Parser/Visitor/ClassVisitor.java#L70)
-  - Example: ```"dependencies": [ "com.xgen.svc.mms.svc.agent.AgentLogSvc", "com.xgen.module.dbusage.svc.DbUsageTypeMappingSvc"]```
+  - Example: ```"dependencies": [ "com.xgen.svc.svc.AgentLogSvc", "com.module.svc.DbUsageTypeMappingSvc"]```
 - ```endpoints```: Array[Endpoint] - Array of endpoints
   - ```endpoint.httpMethod```: [String] 
     - HTTP Verb of the endpoint
