@@ -235,7 +235,7 @@ public class ApiAuditLogResource extends ApiBaseResource {
 }
 ```
 
-### How to visualise API Resources on WebVOWL:
+### How to visualise API Resources on WebVOWL
 - Run APIsParser to generate  [**APIs.json**](#output)  and [**WebVOWL.json**](#output)
 ```bash
 java -jar build/libs/APIsParser-1.0.0.jar --networkChart --path /Users/andrea.angiolillo/workspace/mms/server/src/main/com/xgen/svc/mms
